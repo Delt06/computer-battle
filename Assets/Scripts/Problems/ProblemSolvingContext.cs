@@ -1,12 +1,12 @@
 ﻿using Problems.UI;
 using Shared;
-using Shared.UI;
 using UnityEngine;
 using Random = System.Random;
 
 namespace Problems
 {
-    public class ProblemSolvingContext : ContextBehaviour<ProblemSolvingModel, IProblemSolvingPresenter>
+    public class
+        ProblemSolvingContext : ContextBehaviour<ProblemSolvingModel, IProblemSolvingPresenter, IProblemSolvingView>
     {
         [SerializeField] [Min(1)] private int _answersNumber = 4;
         [SerializeField] [Range(0f, 1f)] private float _maxDeviationFromRightAnswer = 0.25f;
@@ -29,7 +29,11 @@ namespace Problems
             return new ProblemSolvingModel(problemFactory, answerFactory, _answersNumber, _timeLimit);
         }
 
-        protected override IProblemSolvingPresenter CreatePresenter(ProblemSolvingModel model,
-            IViewCollection viewCollection) => new ProblemSolvingPresenter(model, viewCollection);
+        protected override IProblemSolvingPresenter
+            CreatePresenter(ProblemSolvingModel model, IProblemSolvingView view) =>
+            new ProblemSolvingPresenter(model, view);
+
+        protected override void InitializeView(IProblemSolvingView view, IProblemSolvingPresenter presenter) =>
+            view.Initialize(presenter);
     }
 }

@@ -10,8 +10,8 @@ namespace Problems.UI
         private const string ProblemPostfix = "=?";
         private readonly StringBuilder _stringBuilder = new StringBuilder();
 
-        public ProblemSolvingPresenter(ProblemSolvingModel model, IViewCollection viewCollection) : base(model,
-            viewCollection
+        public ProblemSolvingPresenter(ProblemSolvingModel model, IProblemSolvingView view) : base(model,
+            view
         )
         {
             Model.Generated += Model_OnGenerated;
@@ -19,11 +19,6 @@ namespace Problems.UI
             Model.AnsweredIncorrectly += Model_OnAnswered;
             Model.RemainingTimeChanged += Model_OnRemainingTimeChanged;
             Model.GameEnded += Model_OnGameEnded;
-        }
-
-        protected override void InitializeView(IProblemSolvingView view)
-        {
-            view.Initialize(this);
         }
 
         public void Dispose()

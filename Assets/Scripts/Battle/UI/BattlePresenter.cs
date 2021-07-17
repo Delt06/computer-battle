@@ -8,15 +8,13 @@ namespace Battle.UI
         private readonly HealthBarBinding _opponentHealthBarBinding;
         private readonly HealthBarBinding _playerHealthBarBinding;
 
-        public BattlePresenter(BattleModel model, IViewCollection viewCollection) : base(model, viewCollection)
+        public BattlePresenter(BattleModel model, BattleView view) : base(model, view)
         {
             _playerHealthBarBinding = new HealthBarBinding(View.PlayerHealthBar, model.Player);
             _opponentHealthBarBinding = new HealthBarBinding(View.OpponentHealthBar, model.Opponent);
             Model.PlayerWon += Model_OnPlayerWon;
             Model.PlayerLost += Model_OnPlayerLost;
         }
-
-        protected override void InitializeView(BattleView view) => view.Initialize(this);
 
         private void Model_OnPlayerWon()
         {

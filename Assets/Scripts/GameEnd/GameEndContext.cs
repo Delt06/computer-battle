@@ -1,11 +1,10 @@
 ﻿using Battle;
 using GameEnd.UI;
 using Shared;
-using Shared.UI;
 
 namespace GameEnd
 {
-    public class GameEndContext : ContextBehaviour<GameEndModel, GameEndPresenter>
+    public class GameEndContext : ContextBehaviour<GameEndModel, GameEndPresenter, GameEndView>
     {
         private IContext<BattleModel> _battleContext;
 
@@ -28,8 +27,13 @@ namespace GameEnd
 
         protected override GameEndModel CreateModel() => new GameEndModel();
 
-        protected override GameEndPresenter CreatePresenter(GameEndModel model, IViewCollection viewCollection) =>
-            new GameEndPresenter(model, viewCollection);
+        protected override GameEndPresenter CreatePresenter(GameEndModel model, GameEndView view) =>
+            new GameEndPresenter(model, view);
+
+        protected override void InitializeView(GameEndView view, GameEndPresenter presenter)
+        {
+            view.Initialize(presenter);
+        }
 
         protected override void OnDestroyed()
         {

@@ -1,11 +1,13 @@
 ﻿using System;
+using JetBrains.Annotations;
 using Shared.UI;
 using UnityEngine;
 
 namespace Shared
 {
-    public abstract class ContextBehaviour<TModel, TPresenter> : MonoBehaviour, IContext<TModel>
-        where TModel : class where TPresenter : class
+    public abstract class ContextBehaviour<TModel, TPresenter, TView> : MonoBehaviour, IContext<TModel>
+        where TModel : class
+        where TView : class
     {
         private IViewCollection _viewCollection;
         private TPresenter _presenter;
@@ -20,13 +22,25 @@ namespace Shared
         protected void Awake()
         {
             Model = CreateModel();
-            _presenter = CreatePresenter(Model, _viewCollection);
+            var view = _viewCollection.Get<TView>();
+            _presenter = CreatePresenter(Model, view);
+            InitializeView(view, _presenter);
             OnAwaken();
         }
 
+        [NotNull]
         protected abstract TModel CreateModel();
 
-        protected abstract TPresenter CreatePresenter(TModel model, IViewCollection viewCollection);
+        [NotNull]
+        protected abstract TPresenter CreatePresenter([NotNull] TModel model, [NotNull] TView view);
+
+        /// <summary>
+        /// Should be implemented as View.Initialize(presenter).
+        /// </summary>
+        /// <param name="view">Initialized view.</param>
+        /// <param name="presenter">Presenter passed to the view initialization method.</param>
+        /// <see cref="Shared.UI.View&lt;TPresenter&gt;.Initialize(TPresenter)"/>
+        protected abstract void InitializeView([NotNull] TView view, [NotNull] TPresenter presenter);
 
         protected virtual void OnAwaken() { }
 
@@ -36,6 +50,7 @@ namespace Shared
                 disposableModel.Dispose();
             if (_presenter is IDisposable disposablePresenter)
                 disposablePresenter.Dispose();
+            OnDestroyed();
         }
 
         protected virtual void OnDestroyed() { }

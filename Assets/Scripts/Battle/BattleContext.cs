@@ -1,12 +1,11 @@
 ﻿using Battle.UI;
 using Problems;
 using Shared;
-using Shared.UI;
 using UnityEngine;
 
 namespace Battle
 {
-    public class BattleContext : ContextBehaviour<BattleModel, BattlePresenter>
+    public class BattleContext : ContextBehaviour<BattleModel, BattlePresenter, BattleView>
     {
         [SerializeField] private Fighter _player;
         [SerializeField] private Fighter _opponent;
@@ -25,8 +24,11 @@ namespace Battle
             return new BattleModel(_player, _opponent);
         }
 
-        protected override BattlePresenter CreatePresenter(BattleModel model, IViewCollection viewCollection) =>
-            new BattlePresenter(model, viewCollection);
+        protected override BattlePresenter CreatePresenter(BattleModel model, BattleView view) =>
+            new BattlePresenter(model, view);
+
+        protected override void InitializeView(BattleView view, BattlePresenter presenter) =>
+            view.Initialize(presenter);
 
         private void Start()
         {
