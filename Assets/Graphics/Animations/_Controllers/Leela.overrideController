@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Leela
+  m_Controller: {fileID: 9100000, guid: 8c648de19997b5843a6201b65e3f192f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -3100369314251171874, guid: 2d930b989dca8394c97d126e6b487ec5, type: 3}
+    m_OverrideClip: {fileID: -3100369314251171874, guid: 95870fe811ce2274f9eac108de4af88b, type: 3}
