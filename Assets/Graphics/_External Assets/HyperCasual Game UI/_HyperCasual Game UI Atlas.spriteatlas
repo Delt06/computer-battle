@@ -56,7 +56,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 8f87fcb2a6e6c104c992a335e9116d53, type: 3}
-    totalSpriteSurfaceArea: 4443952
+    totalSpriteSurfaceArea: 4575024
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -76,6 +76,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 14af24f119f5f7b4e81c5c92df80be57, type: 3}
   - {fileID: 21300000, guid: 43e4241239afa15438addb562b81b503, type: 3}
   - {fileID: 21300000, guid: 052f76b2aee9d9149949645635748fde, type: 3}
+  - {fileID: 21300000, guid: 9bb8e4039b5bcac46a2a88f614277f34, type: 3}
   - {fileID: 21300000, guid: c6e5905308de2ca4eb6eb35b12b4f4d4, type: 3}
   - {fileID: 21300000, guid: f5e97853086a96740a08f80274eb0e84, type: 3}
   - {fileID: 21300000, guid: f2f60234bb100b446b1ff824152675cf, type: 3}
@@ -107,6 +108,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8b7555e95214dc843960302ea73b55fc, type: 3}
   - {fileID: 21300000, guid: db067de9f0379434aba153a3dd3ae769, type: 3}
   - {fileID: 21300000, guid: 9e3d2cf91031eb94b8f63472a61dfb52, type: 3}
+  - {fileID: 21300000, guid: 5453770a6834583448dad46d4233e987, type: 3}
   - {fileID: 21300000, guid: a001fe3a48142424d984b6842c903be3, type: 3}
   - {fileID: 21300000, guid: 6fcc267a5595ebe4582dda0b76d746d2, type: 3}
   - {fileID: 21300000, guid: 64d51adaa534bcf499f2fe9a5891ddb2, type: 3}
@@ -147,8 +149,9 @@ SpriteAtlas:
   - plusIcon
   - blueBtnTapped
   - circle
-  - whiteBG
+  - whiteBgWithOutline
   - yellowBtnNormal
+  - whiteBg
   - blueBtnNormal
   - closeBtn
   - rewardAdsBtn
@@ -180,6 +183,7 @@ SpriteAtlas:
   - giftIcon
   - slider1
   - greenBtnTapped
+  - whiteBgOnlyOutline
   - toggleOff
   - playBtnRect
   - purpleRectTapped

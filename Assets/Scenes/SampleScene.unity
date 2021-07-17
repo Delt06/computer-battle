@@ -1534,6 +1534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _problemText: {fileID: 1909213644}
+  _selectionDuration: 0.1
+  _answerDisplayDuration: 0.5
 --- !u!4 &1770544179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4542206677876359723, guid: 865f3c233dce6344188651d5d37c6cc5, type: 3}

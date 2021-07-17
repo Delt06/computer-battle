@@ -29,12 +29,17 @@ namespace Problems.UI
 
         public void OnAnswerSelected(int selectedAnswerIndex)
         {
-            var selectedAnswer = Model.Answers[selectedAnswerIndex];
-            var answerIsCorrect = selectedAnswer == Model.Problem.GetAnswer();
-            if (answerIsCorrect)
+            if (IsCorrect(selectedAnswerIndex))
                 Model.OnAnsweredCorrectly();
             else
                 Model.OnAnsweredIncorrectly();
+        }
+
+        public bool IsCorrect(int answerIndex)
+        {
+            var selectedAnswer = Model.Answers[answerIndex];
+            var answerIsCorrect = selectedAnswer == Model.Problem.GetAnswer();
+            return answerIsCorrect;
         }
 
         private void Model_OnGenerated()
@@ -57,6 +62,8 @@ namespace Problems.UI
                 var answer = Model.Answers[index];
                 answerButton.Text.SetText("{0:0}", answer);
             }
+
+            View.OnGenerated();
         }
 
         private void Model_OnAnswered()
