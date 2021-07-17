@@ -18,6 +18,7 @@ namespace Problems.UI
             Model.Generated += Model_OnGenerated;
             Model.AnsweredCorrectly += Model_OnAnswered;
             Model.AnsweredIncorrectly += Model_OnAnswered;
+            Model.RemainingTimeChanged += Model_OnRemainingTimeChanged;
         }
 
         public void Dispose()
@@ -25,6 +26,7 @@ namespace Problems.UI
             Model.Generated -= Model_OnGenerated;
             Model.AnsweredCorrectly -= Model_OnAnswered;
             Model.AnsweredIncorrectly -= Model_OnAnswered;
+            Model.RemainingTimeChanged -= Model_OnRemainingTimeChanged;
         }
 
         public void OnAnswerSelected(int selectedAnswerIndex)
@@ -41,6 +43,8 @@ namespace Problems.UI
             var answerIsCorrect = selectedAnswer == Model.Problem.GetAnswer();
             return answerIsCorrect;
         }
+
+        public void Pause() => Model.Pause();
 
         private void Model_OnGenerated()
         {
@@ -66,6 +70,12 @@ namespace Problems.UI
         private void Model_OnAnswered()
         {
             View.Hide();
+        }
+
+        private void Model_OnRemainingTimeChanged()
+        {
+            var ratio = Model.RemainingTime / Model.TimeLimit;
+            View.SetRemainingTimeRatio(ratio);
         }
 
         private static string OperationToString(Operation operation) =>

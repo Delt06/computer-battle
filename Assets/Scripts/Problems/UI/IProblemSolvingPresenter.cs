@@ -4,5 +4,6 @@
     {
         void OnAnswerSelected(int selectedAnswerIndex);
         bool IsCorrect(int answerIndex);
+        void Pause();
     }
 }

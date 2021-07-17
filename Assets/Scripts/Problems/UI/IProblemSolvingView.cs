@@ -11,5 +11,6 @@ namespace Problems.UI
         void OnGenerated();
         void Show();
         void Hide();
+        void SetRemainingTimeRatio(float ratio);
     }
 }

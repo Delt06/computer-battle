@@ -5,6 +5,7 @@ using Shared.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Problems.UI
 {
@@ -13,6 +14,7 @@ namespace Problems.UI
         [SerializeField] private TMP_Text _problemText;
         [SerializeField] [Min(0f)] private float _selectionDuration = 0.5f;
         [SerializeField] [Min(0f)] private float _answerDisplayDuration = 1f;
+        [SerializeField] private Slider _timerSlider = default;
 
         private UnityAction[] _onClickListeners;
         private ProblemSolvingView_AnswerButton[] _answerButtons;
@@ -27,6 +29,11 @@ namespace Problems.UI
         {
             if (text == null) throw new ArgumentNullException(nameof(text));
             _problemText.SetText(text);
+        }
+
+        public void SetRemainingTimeRatio(float ratio)
+        {
+            _timerSlider.value = ratio;
         }
 
         private void Awake()
@@ -62,6 +69,7 @@ namespace Problems.UI
             }
 
             _answerButtons[selectedAnswerIndex].MakeSelected();
+            Presenter.Pause();
 
             DOTween.Sequence()
                 .AppendInterval(_selectionDuration)
