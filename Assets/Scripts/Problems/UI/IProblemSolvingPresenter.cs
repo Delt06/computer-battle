@@ -1,7 +1,7 @@
 ﻿namespace Problems.UI
 {
-	public interface IProblemSolvingPresenter
-	{
-		void OnAnswerSelected(int selectedAnswerIndex);
-	}
+    public interface IProblemSolvingPresenter
+    {
+        void OnAnswerSelected(int selectedAnswerIndex);
+    }
 }

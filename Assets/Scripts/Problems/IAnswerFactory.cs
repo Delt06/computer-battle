@@ -2,8 +2,8 @@
 
 namespace Problems
 {
-	public interface IAnswerFactory
-	{
-		void Create(in Problem problem, [NotNull] int[] answers);
-	}
+    public interface IAnswerFactory
+    {
+        void Create(in Problem problem, [NotNull] int[] answers);
+    }
 }

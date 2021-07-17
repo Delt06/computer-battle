@@ -1,9 +1,9 @@
 ﻿namespace Battle
 {
-	public enum FighterState
-	{
-		Idle,
-		Attacking,
-		Dead,
-	}
+    public enum FighterState
+    {
+        Idle,
+        Attacking,
+        Dead,
+    }
 }

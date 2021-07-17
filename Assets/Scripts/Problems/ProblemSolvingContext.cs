@@ -5,37 +5,37 @@ using Random = System.Random;
 
 namespace Problems
 {
-	public class ProblemSolvingContext : MonoBehaviour
-	{
-		[SerializeField, Min(1)] private int _answersNumber = 4;
-		[SerializeField, Range(0f, 1f)] private float _maxDeviationFromRightAnswer = 0.25f;
-		
-		private ProblemSolvingPresenter _presenter;
-		private IViewCollection _viewCollection;
+    public class ProblemSolvingContext : MonoBehaviour
+    {
+        [SerializeField] [Min(1)] private int _answersNumber = 4;
+        [SerializeField] [Range(0f, 1f)] private float _maxDeviationFromRightAnswer = 0.25f;
 
-		public void Construct(IViewCollection viewCollection)
-		{
-			_viewCollection = viewCollection;
-		}
+        private ProblemSolvingPresenter _presenter;
+        private IViewCollection _viewCollection;
 
-		public ProblemSolvingModel Model { get; private set; }
+        public void Construct(IViewCollection viewCollection)
+        {
+            _viewCollection = viewCollection;
+        }
 
-		private void Awake()
-		{
-			var problemFactory = new RandomProblemFactory(new Random());
-			var answerFactory = new RandomAnswerFactory(new Random(), _maxDeviationFromRightAnswer);
-			Model = new ProblemSolvingModel(problemFactory, answerFactory, _answersNumber);
-			_presenter = new ProblemSolvingPresenter(Model, _viewCollection);
-		}
+        public ProblemSolvingModel Model { get; private set; }
 
-		private void Start()
-		{
-			Model.Generate();
-		}
+        private void Awake()
+        {
+            var problemFactory = new RandomProblemFactory(new Random());
+            var answerFactory = new RandomAnswerFactory(new Random(), _maxDeviationFromRightAnswer);
+            Model = new ProblemSolvingModel(problemFactory, answerFactory, _answersNumber);
+            _presenter = new ProblemSolvingPresenter(Model, _viewCollection);
+        }
 
-		private void OnDestroy()
-		{
-			_presenter.Dispose();
-		}
-	}
+        private void Start()
+        {
+            Model.Generate();
+        }
+
+        private void OnDestroy()
+        {
+            _presenter.Dispose();
+        }
+    }
 }

@@ -1,8 +1,8 @@
 ﻿namespace Problems
 {
-	public enum Operation
-	{
-		Addition,
-		Subtraction,
-	}
+    public enum Operation
+    {
+        Addition,
+        Subtraction,
+    }
 }

@@ -1,4 +1,4 @@
 ﻿namespace Battle.UI
 {
-	public interface IBattlePresenter { }
+    public interface IBattlePresenter { }
 }
