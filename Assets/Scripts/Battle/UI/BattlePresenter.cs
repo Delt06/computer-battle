@@ -44,7 +44,8 @@ namespace Battle.UI
 
         private void UpdateFill()
         {
-            _healthBar.FillSlider.value = Health.Value / Health.MaxValue;
+            var fillAmount = Health.Value / Health.MaxValue;
+            _healthBar.SetFillAmount(fillAmount);
         }
     }
 }

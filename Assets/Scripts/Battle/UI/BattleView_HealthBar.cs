@@ -7,7 +7,7 @@ namespace Battle.UI
     {
         [SerializeField] private Slider _fillSlider;
 
-        public Slider FillSlider => _fillSlider;
+        public void SetFillAmount(float fillAmount) => _fillSlider.value = fillAmount;
 
         private void Reset()
         {

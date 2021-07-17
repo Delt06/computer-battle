@@ -2,7 +2,7 @@
 
 namespace Shared.UI
 {
-    public abstract class View<TPresenter> : MonoBehaviour
+    public abstract class View<TPresenter> : MonoBehaviour, IView<TPresenter>
     {
         protected TPresenter Presenter { get; private set; }
 

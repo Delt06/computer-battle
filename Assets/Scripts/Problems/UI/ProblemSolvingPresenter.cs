@@ -4,7 +4,7 @@ using Shared.UI;
 
 namespace Problems.UI
 {
-    public class ProblemSolvingPresenter : Presenter<ProblemSolvingModel, ProblemSolvingView>, IDisposable,
+    public class ProblemSolvingPresenter : Presenter<ProblemSolvingModel, IProblemSolvingView>, IDisposable,
         IProblemSolvingPresenter
     {
         private const string ProblemPostfix = "=?";
@@ -52,15 +52,12 @@ namespace Problems.UI
                 .Append(OperationToString(problem.Operation))
                 .Append(problem.RightNumber)
                 .Append(ProblemPostfix);
-            View.ProblemText.SetText(_stringBuilder);
+            View.SetProblemText(_stringBuilder);
 
-            var answerButtons = View.AnswerButtons;
-
-            for (var index = 0; index < answerButtons.Length; index++)
+            for (var answerIndex = 0; answerIndex < Model.Answers.Count; answerIndex++)
             {
-                var answerButton = answerButtons[index];
-                var answer = Model.Answers[index];
-                answerButton.Text.SetText("{0:0}", answer);
+                var answer = Model.Answers[answerIndex];
+                View.SetAnswerText(answerIndex, "{0:0}", answer);
             }
 
             View.OnGenerated();
