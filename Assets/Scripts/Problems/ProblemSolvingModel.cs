@@ -11,6 +11,7 @@ namespace Problems
         private readonly IProblemFactory _problemFactory;
         private float _remainingTime;
         private bool _paused;
+        private bool _ended;
 
         public ProblemSolvingModel(IProblemFactory problemFactory, IAnswerFactory answerFactory, int answersNumber,
             float timeLimit)
@@ -68,5 +69,14 @@ namespace Problems
         }
 
         public event Action RemainingTimeChanged;
+
+        public void EndGame()
+        {
+            if (_ended) return;
+            _ended = true;
+            GameEnded?.Invoke();
+        }
+
+        public event Action GameEnded;
     }
 }

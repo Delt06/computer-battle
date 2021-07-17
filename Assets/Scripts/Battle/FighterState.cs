@@ -5,5 +5,6 @@
         Idle,
         Attacking,
         Dead,
+        Celebrating,
     }
 }

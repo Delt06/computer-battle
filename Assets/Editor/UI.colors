@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 12323, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: UI
   m_EditorClassIdentifier: 
-  m_Presets: []
+  m_Presets:
+  - m_Name: Background
+    m_Color: {r: 0.14381532, g: 0.12896048, b: 0.16981131, a: 0.627451}

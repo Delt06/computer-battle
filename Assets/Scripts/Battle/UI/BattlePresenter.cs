@@ -13,12 +13,26 @@ namespace Battle.UI
             View.Initialize(this);
             _playerHealthBarBinding = new HealthBarBinding(View.PlayerHealthBar, model.Player);
             _opponentHealthBarBinding = new HealthBarBinding(View.OpponentHealthBar, model.Opponent);
+            Model.PlayerWon += Model_OnPlayerWon;
+            Model.PlayerLost += Model_OnPlayerLost;
+        }
+
+        private void Model_OnPlayerWon()
+        {
+            View.Hide();
+        }
+
+        private void Model_OnPlayerLost()
+        {
+            View.Hide();
         }
 
         public void Dispose()
         {
             _playerHealthBarBinding.Dispose();
             _opponentHealthBarBinding.Dispose();
+            Model.PlayerWon -= Model_OnPlayerWon;
+            Model.PlayerLost -= Model_OnPlayerLost;
         }
     }
 

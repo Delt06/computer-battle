@@ -19,6 +19,7 @@ namespace Problems.UI
             Model.AnsweredCorrectly += Model_OnAnswered;
             Model.AnsweredIncorrectly += Model_OnAnswered;
             Model.RemainingTimeChanged += Model_OnRemainingTimeChanged;
+            Model.GameEnded += Model_OnGameEnded;
         }
 
         public void Dispose()
@@ -27,6 +28,7 @@ namespace Problems.UI
             Model.AnsweredCorrectly -= Model_OnAnswered;
             Model.AnsweredIncorrectly -= Model_OnAnswered;
             Model.RemainingTimeChanged -= Model_OnRemainingTimeChanged;
+            Model.GameEnded -= Model_OnGameEnded;
         }
 
         public void OnAnswerSelected(int selectedAnswerIndex)
@@ -67,6 +69,14 @@ namespace Problems.UI
             View.OnGenerated();
         }
 
+        private static string OperationToString(Operation operation) =>
+            operation switch
+            {
+                Operation.Addition => "+",
+                Operation.Subtraction => "-",
+                _ => throw new ArgumentOutOfRangeException(nameof(operation), operation, null),
+            };
+
         private void Model_OnAnswered()
         {
             View.Hide();
@@ -78,12 +88,9 @@ namespace Problems.UI
             View.SetRemainingTimeRatio(ratio);
         }
 
-        private static string OperationToString(Operation operation) =>
-            operation switch
-            {
-                Operation.Addition => "+",
-                Operation.Subtraction => "-",
-                _ => throw new ArgumentOutOfRangeException(nameof(operation), operation, null),
-            };
+        private void Model_OnGameEnded()
+        {
+            View.Hide();
+        }
     }
 }

@@ -11,5 +11,7 @@ namespace Battle.UI
         public BattleView_HealthBar PlayerHealthBar => _playerHealthBar;
 
         public BattleView_HealthBar OpponentHealthBar => _opponentHealthBar;
+
+        public void Hide() => gameObject.SetActive(false);
     }
 }

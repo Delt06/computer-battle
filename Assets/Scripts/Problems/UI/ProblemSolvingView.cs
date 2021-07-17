@@ -110,6 +110,7 @@ namespace Problems.UI
         private void Toggle(bool active)
         {
             _problemText.gameObject.SetActive(active);
+            _timerSlider.gameObject.SetActive(active);
 
             foreach (var answerButton in _answerButtons)
             {

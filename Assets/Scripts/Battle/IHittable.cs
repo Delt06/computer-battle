@@ -6,5 +6,6 @@ namespace Battle
     {
         event Action ReceivedDamage;
         void ReceiveDamage(float damage);
+        event Action Died;
     }
 }

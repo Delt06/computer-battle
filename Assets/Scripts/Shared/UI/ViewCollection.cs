@@ -14,7 +14,7 @@ namespace Shared.UI
             if (_viewsCache.TryGetValue(type, out var view))
                 return (TView) view;
 
-            var viewComponent = GetComponentInChildren<TView>();
+            var viewComponent = GetComponentInChildren<TView>(true);
             _viewsCache[type] = viewComponent ?? throw new ArgumentException($"View of type {type} not found.");
             return viewComponent;
         }

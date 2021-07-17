@@ -36,12 +36,31 @@ namespace Battle
 
         private void Health_OnDied()
         {
-            if (State == FighterState.Dead) return;
-            State = FighterState.Dead;
-            Died?.Invoke();
+            switch (State)
+            {
+                case FighterState.Idle:
+                case FighterState.Attacking:
+                    State = FighterState.Dead;
+                    Died?.Invoke();
+                    break;
+            }
         }
 
         public event Action Died;
+
+        public void StartCelebrating()
+        {
+            switch (State)
+            {
+                case FighterState.Idle:
+                case FighterState.Attacking:
+                    State = FighterState.Celebrating;
+                    StartedCelebrating?.Invoke();
+                    break;
+            }
+        }
+
+        public event Action StartedCelebrating;
 
         public void HitOpponent()
         {
