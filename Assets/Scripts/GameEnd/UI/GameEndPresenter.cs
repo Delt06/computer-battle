@@ -7,9 +7,13 @@ namespace GameEnd.UI
     {
         public GameEndPresenter(GameEndModel model, IViewCollection viewCollection) : base(model, viewCollection)
         {
-            View.Initialize(this);
             Model.Won += Model_OnWon;
             Model.Lost += Model_OnLost;
+        }
+
+        protected override void InitializeView(GameEndView view)
+        {
+            View.Initialize(this);
         }
 
         private void Model_OnWon() => View.ShowWinScreen();

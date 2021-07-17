@@ -14,12 +14,16 @@ namespace Problems.UI
             viewCollection
         )
         {
-            View.Initialize(this);
             Model.Generated += Model_OnGenerated;
             Model.AnsweredCorrectly += Model_OnAnswered;
             Model.AnsweredIncorrectly += Model_OnAnswered;
             Model.RemainingTimeChanged += Model_OnRemainingTimeChanged;
             Model.GameEnded += Model_OnGameEnded;
+        }
+
+        protected override void InitializeView(IProblemSolvingView view)
+        {
+            view.Initialize(this);
         }
 
         public void Dispose()
