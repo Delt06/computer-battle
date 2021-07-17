@@ -3,6 +3,6 @@
     public interface ILevelManager
     {
         void LoadNext();
-        void Retry();
+        void Reload();
     }
 }

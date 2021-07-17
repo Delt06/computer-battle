@@ -9,7 +9,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 324371579454307237, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
       propertyPath: m_Name
-      value: Game End View.Window Base
+      value: Game End View.Win Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 344056937980745206, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.49411768
+      objectReference: {fileID: 0}
+    - target: {fileID: 344056937980745206, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 344056937980745206, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.48235297
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071768045155427399, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_text
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700991930352086559, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_text
+      value: You Win!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700991930352086559, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.1137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700991930352086559, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.09411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700991930352086559, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.098039225
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700991930352086559, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280096793
       objectReference: {fileID: 0}
     - target: {fileID: 4452139058202232268, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
       propertyPath: m_Pivot.x
@@ -94,6 +130,18 @@ PrefabInstance:
     - target: {fileID: 4452139058202232268, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174703912279636763, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7653971
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174703912279636763, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174703912279636763, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.72169816
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce38f16bee7d43d488028f1944fd80f5, type: 3}

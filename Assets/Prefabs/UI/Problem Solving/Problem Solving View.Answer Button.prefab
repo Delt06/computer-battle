@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 495906450322084016}
   _text: {fileID: 495906452333974103}
-  _finalTextColor: {r: 1, g: 1, b: 1, a: 1}
+  _finalTextColor: {r: 0.098039225, g: 0.09411766, b: 0.1137255, a: 1}
   _normal: {fileID: 8630513566956402241}
   _selected: {fileID: 1229203911311076926}
   _correct: {fileID: 593006386159868707}

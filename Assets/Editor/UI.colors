@@ -15,3 +15,17 @@ MonoBehaviour:
   m_Presets:
   - m_Name: Background
     m_Color: {r: 0.14381532, g: 0.12896048, b: 0.16981131, a: 0.627451}
+  - m_Name: Text Color (on bright)
+    m_Color: {r: 0.098039225, g: 0.09411766, b: 0.1137255, a: 1}
+  - m_Name: Text Color (on dark)
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
+  - m_Name: Bright Button
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
+  - m_Name: Green
+    m_Color: {r: 0.48235297, g: 0.8431373, b: 0.49411768, a: 1}
+  - m_Name: Green (Pale)
+    m_Color: {r: 0.72169816, g: 0.9622642, b: 0.7653971, a: 1}
+  - m_Name: Orange
+    m_Color: {r: 0.95294124, g: 0.6117647, b: 0.19607845, a: 1}
+  - m_Name: Orange (Pale)
+    m_Color: {r: 1, g: 0.8794761, b: 0.7122642, a: 1}

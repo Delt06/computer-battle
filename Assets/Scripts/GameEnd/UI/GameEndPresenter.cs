@@ -20,5 +20,15 @@ namespace GameEnd.UI
             Model.Won -= Model_OnWon;
             Model.Lost -= Model_OnLost;
         }
+
+        public void OnNextButtonClicked()
+        {
+            Model.LoadNextLevel();
+        }
+
+        public void OnRetryButtonClicked()
+        {
+            Model.ReloadCurrentLevel();
+        }
     }
 }

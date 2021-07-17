@@ -33,6 +33,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fighter: {fileID: 4542206677876359724}
   _animator: {fileID: 5786586603082815659}
+  _celebratingDelay: 0.5
 --- !u!95 &4542206676155905881
 Animator:
   serializedVersion: 3
@@ -66,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fighter: {fileID: 4542206677876359724}
   _animator: {fileID: 4542206676155905881}
+  _celebratingDelay: 0.5
 --- !u!1 &4542206677876359722
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fighter: {fileID: 4542206677876359724}
   _animator: {fileID: 3063919997926208186}
+  _celebratingDelay: 0.5
 --- !u!95 &5143571014734911327
 Animator:
   serializedVersion: 3
@@ -181,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fighter: {fileID: 4542206677876359724}
   _animator: {fileID: 5143571014734911327}
+  _celebratingDelay: 0.5
 --- !u!1001 &2103883019038958001
 PrefabInstance:
   m_ObjectHideFlags: 0

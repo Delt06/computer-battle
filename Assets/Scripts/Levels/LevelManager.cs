@@ -10,7 +10,7 @@ namespace Levels
             ReloadScene();
         }
 
-        public void Retry()
+        public void Reload()
         {
             ReloadScene();
         }
