@@ -1,0 +1,16 @@
+{
+    "name": "DELTation.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b1af87803e6f164448d1c119269949a6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

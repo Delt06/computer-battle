@@ -1,5 +1,5 @@
-﻿using System;
-using _Shared.UI;
+﻿using _Shared.UI;
+using DELTation.UI.Screens;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,19 +7,19 @@ namespace GameEnd.UI
 {
     public class GameEndView : View<GameEndPresenter>
     {
-        [SerializeField] private GameObject _winScreen;
-        [SerializeField] private GameObject _loseScreen;
+        [SerializeField] private GameScreen _winScreen;
+        [SerializeField] private GameScreen _loseScreen;
         [SerializeField] private Button _nextButton = default;
         [SerializeField] private Button _retryButton = default;
 
         public void ShowWinScreen()
         {
-            _winScreen.SetActive(true);
+            _winScreen.Open();
         }
 
         public void ShowLoseScreen()
         {
-            _loseScreen.SetActive(true);
+            _loseScreen.Open();
         }
 
         private void OnEnable()

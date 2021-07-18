@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4452139058202232268}
+  - component: {fileID: 2363486264035707088}
   m_Layer: 0
   m_Name: Game End View.Screen Base
   m_TagString: Untagged
@@ -37,6 +38,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2363486264035707088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324371579454307237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37493cfa3004a3398dca64e67c27c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _closeOnStart: 1
+  _blockRaycastsWhenClosed: 1
 --- !u!1 &742670592796609459
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837262601446417092}
-  - component: {fileID: 7311912640523627362}
+  - component: {fileID: 2123043655302082575}
   m_Layer: 0
   m_Name: Header
   m_TagString: Untagged
@@ -370,7 +385,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -361.35376}
   m_SizeDelta: {x: -256, y: 237.7353}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7311912640523627362
+--- !u!114 &2123043655302082575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,13 +394,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4776132878663373871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c23fe3eb7c4455d9aae36c530697a06, type: 3}
+  m_Script: {fileID: 11500000, guid: 98621ec5989d4ead84ebb2065e6b4808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 2
-  _duration: 0.5
-  _ease: 27
-  _overshoot: 2
+  _openData:
+    Delay: 2
+    Duration: 0.5
+    Ease: 23
+    Overshoot: 2
+  _openToInitialState: 1
+  _openState: {x: 0, y: 0, z: 0}
+  _closeData:
+    Delay: 0
+    Duration: 0
+    Ease: 0
+    Overshoot: 1.7
+  _closedState: {x: 0, y: 0, z: 0}
 --- !u!1 &7907388842234765905
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +556,7 @@ GameObject:
   - component: {fileID: 2163318325105911729}
   - component: {fileID: 344056937980745206}
   - component: {fileID: 7015263472939069696}
-  - component: {fileID: 2472503651378588681}
+  - component: {fileID: 7721105484790102973}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -642,7 +666,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2472503651378588681
+--- !u!114 &7721105484790102973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -651,13 +675,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8331714412385523233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c23fe3eb7c4455d9aae36c530697a06, type: 3}
+  m_Script: {fileID: 11500000, guid: 98621ec5989d4ead84ebb2065e6b4808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 3
-  _duration: 0.5
-  _ease: 27
-  _overshoot: 2
+  _openData:
+    Delay: 3
+    Duration: 0.5
+    Ease: 23
+    Overshoot: 2
+  _openToInitialState: 1
+  _openState: {x: 0, y: 0, z: 0}
+  _closeData:
+    Delay: 0
+    Duration: 0
+    Ease: 0
+    Overshoot: 1.7
+  _closedState: {x: 0, y: 0, z: 0}
 --- !u!1 &8687976784961730651
 GameObject:
   m_ObjectHideFlags: 0

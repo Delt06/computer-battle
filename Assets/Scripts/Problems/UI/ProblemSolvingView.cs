@@ -9,13 +9,12 @@ using UnityEngine.UI;
 
 namespace Problems.UI
 {
-    public class ProblemSolvingView : View<IProblemSolvingPresenter>, IProblemSolvingView
+    public class ProblemSolvingView : SingleScreenView<IProblemSolvingPresenter>, IProblemSolvingView
     {
-        [SerializeField] private bool _showOnAwake;
         [SerializeField] private TMP_Text _problemText;
         [SerializeField] [Min(0f)] private float _selectionDuration = 0.5f;
         [SerializeField] [Min(0f)] private float _answerDisplayDuration = 1f;
-        [SerializeField] private Slider _timerSlider = default;
+        [SerializeField] private Slider _timerSlider;
 
         private UnityAction[] _onClickListeners;
         private ProblemSolvingView_AnswerButton[] _answerButtons;
@@ -39,7 +38,7 @@ namespace Problems.UI
 
         private void Awake()
         {
-            _answerButtons = GetComponentsInChildren<ProblemSolvingView_AnswerButton>();
+            _answerButtons = GetComponentsInChildren<ProblemSolvingView_AnswerButton>(true);
             _onClickListeners = new UnityAction[_answerButtons.Length];
 
             for (var index = 0; index < _answerButtons.Length; index++)
@@ -47,8 +46,6 @@ namespace Problems.UI
                 var capturedIndex = index;
                 _onClickListeners[index] = () => OnSelected(capturedIndex);
             }
-
-            Toggle(_showOnAwake);
         }
 
         public void OnGenerated()
@@ -59,10 +56,6 @@ namespace Problems.UI
                 answerButton.MakeNormal();
             }
         }
-
-        public void Show() => Toggle(true);
-
-        public void Hide() => Toggle(false);
 
         private void OnSelected(int selectedAnswerIndex)
         {
@@ -107,17 +100,6 @@ namespace Problems.UI
             {
                 var buttonClickedEvent = _answerButtons[i].Button.onClick;
                 buttonClickedEvent.RemoveListener(_onClickListeners[i]);
-            }
-        }
-
-        private void Toggle(bool active)
-        {
-            _problemText.gameObject.SetActive(active);
-            _timerSlider.gameObject.SetActive(active);
-
-            foreach (var answerButton in _answerButtons)
-            {
-                answerButton.gameObject.SetActive(active);
             }
         }
     }

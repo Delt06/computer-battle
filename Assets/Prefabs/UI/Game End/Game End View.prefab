@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec5defa307e4233b9844a2a74c95b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _winScreen: {fileID: 919546678980611203}
-  _loseScreen: {fileID: 4430722863912133578}
+  _winScreen: {fileID: 2922359874690072566}
+  _loseScreen: {fileID: 1815437733454745791}
   _nextButton: {fileID: 7573291073855997478}
   _retryButton: {fileID: 6387872519033612655}
 --- !u!1001 &6469456917744353842
@@ -63,7 +63,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6127923681875136177, guid: d3193a27a28329a4ea5ea4a45028bb35, type: 3}
       propertyPath: m_Name
-      value: Game End View.Win Screen
+      value: Win Screen
       objectReference: {fileID: 0}
     - target: {fileID: 6127923681875136177, guid: d3193a27a28329a4ea5ea4a45028bb35, type: 3}
       propertyPath: m_IsActive
@@ -155,16 +155,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3193a27a28329a4ea5ea4a45028bb35, type: 3}
---- !u!1 &919546678980611203 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6127923681875136177, guid: d3193a27a28329a4ea5ea4a45028bb35, type: 3}
-  m_PrefabInstance: {fileID: 6469456917744353842}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3858362275489772266 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7801229364368863448, guid: d3193a27a28329a4ea5ea4a45028bb35, type: 3}
   m_PrefabInstance: {fileID: 6469456917744353842}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2922359874690072566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162332426750213572, guid: d3193a27a28329a4ea5ea4a45028bb35, type: 3}
+  m_PrefabInstance: {fileID: 6469456917744353842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37493cfa3004a3398dca64e67c27c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7573291073855997478 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3517765207328441364, guid: d3193a27a28329a4ea5ea4a45028bb35, type: 3}
@@ -185,7 +191,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6127923681875136177, guid: 5ad2551319231e443b22b20ade5bf29d, type: 3}
       propertyPath: m_Name
-      value: Game End View.Lose Screen
+      value: Lose Screen
       objectReference: {fileID: 0}
     - target: {fileID: 6127923681875136177, guid: 5ad2551319231e443b22b20ade5bf29d, type: 3}
       propertyPath: m_IsActive
@@ -277,16 +283,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad2551319231e443b22b20ade5bf29d, type: 3}
---- !u!1 &4430722863912133578 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6127923681875136177, guid: 5ad2551319231e443b22b20ade5bf29d, type: 3}
-  m_PrefabInstance: {fileID: 7527719392343240059}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &302968373623217571 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7801229364368863448, guid: 5ad2551319231e443b22b20ade5bf29d, type: 3}
   m_PrefabInstance: {fileID: 7527719392343240059}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1815437733454745791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162332426750213572, guid: 5ad2551319231e443b22b20ade5bf29d, type: 3}
+  m_PrefabInstance: {fileID: 7527719392343240059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37493cfa3004a3398dca64e67c27c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6387872519033612655 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3517765207328441364, guid: 5ad2551319231e443b22b20ade5bf29d, type: 3}
