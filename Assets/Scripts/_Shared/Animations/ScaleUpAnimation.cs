@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace Shared.Animations
+namespace _Shared.Animations
 {
     public sealed class ScaleUpAnimation : AnimationBase<Vector3>
     {

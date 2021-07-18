@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Shared.Animations
+namespace _Shared.Animations
 {
     [RequireComponent(typeof(Graphic))]
     public sealed class FadeInAnimation : AnimationBase<float>

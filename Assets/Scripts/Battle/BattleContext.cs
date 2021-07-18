@@ -1,11 +1,11 @@
-﻿using Battle.UI;
+﻿using _Shared;
+using Battle.UI;
 using Problems;
-using Shared;
 using UnityEngine;
 
 namespace Battle
 {
-    public class BattleContext : ContextBehaviour<BattleModel, BattlePresenter, BattleView>
+    public class BattleContext : ContextBehaviour<BattleModel, BattleView, BattlePresenter>
     {
         [SerializeField] private Fighter _player;
         [SerializeField] private Fighter _opponent;
@@ -26,9 +26,6 @@ namespace Battle
 
         protected override BattlePresenter CreatePresenter(BattleModel model, BattleView view) =>
             new BattlePresenter(model, view);
-
-        protected override void InitializeView(BattleView view, BattlePresenter presenter) =>
-            view.Initialize(presenter);
 
         private void Start()
         {

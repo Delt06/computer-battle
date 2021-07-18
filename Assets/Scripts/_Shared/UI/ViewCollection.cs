@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Shared.UI
+namespace _Shared.UI
 {
     public sealed class ViewCollection : MonoBehaviour, IViewCollection
     {

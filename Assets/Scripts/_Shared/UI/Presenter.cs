@@ -1,4 +1,4 @@
-﻿namespace Shared.UI
+﻿namespace _Shared.UI
 {
     public abstract class Presenter<TModel, TView> where TView : class
     {

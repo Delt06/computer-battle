@@ -1,5 +1,5 @@
 ﻿using System;
-using Shared.UI;
+using _Shared.UI;
 
 namespace GameEnd.UI
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text;
+using _Shared.UI;
 using JetBrains.Annotations;
-using Shared.UI;
 
 namespace Problems.UI
 {

@@ -1,10 +1,12 @@
-﻿using Shared.UI;
+﻿using _Shared.UI;
 using UnityEngine;
 
 namespace Battle.UI
 {
     public class BattleView : View<IBattlePresenter>
     {
+        [SerializeField] private bool _showOnAwake;
+        [SerializeField] private GameObject _contentRoot = default;
         [SerializeField] private BattleView_HealthBar _playerHealthBar;
         [SerializeField] private BattleView_HealthBar _opponentHealthBar;
 
@@ -12,6 +14,16 @@ namespace Battle.UI
 
         public BattleView_HealthBar OpponentHealthBar => _opponentHealthBar;
 
-        public void Hide() => gameObject.SetActive(false);
+        public void Show() => _contentRoot.SetActive(true);
+
+        public void Hide() => _contentRoot.SetActive(false);
+
+        private void Awake()
+        {
+            if (_showOnAwake)
+                Show();
+            else
+                Hide();
+        }
     }
 }

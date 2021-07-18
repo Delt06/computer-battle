@@ -1,13 +1,13 @@
 ﻿using System;
+using _Shared.UI;
 using JetBrains.Annotations;
-using Shared.UI;
 using UnityEngine;
 
-namespace Shared
+namespace _Shared
 {
-    public abstract class ContextBehaviour<TModel, TPresenter, TView> : MonoBehaviour, IContext<TModel>
+    public abstract class ContextBehaviour<TModel, TView, TPresenter> : MonoBehaviour, IContext<TModel>
         where TModel : class
-        where TView : class
+        where TView : class, IView<TPresenter>
     {
         private IViewCollection _viewCollection;
         private TPresenter _presenter;
@@ -24,7 +24,7 @@ namespace Shared
             Model = CreateModel();
             var view = _viewCollection.Get<TView>();
             _presenter = CreatePresenter(Model, view);
-            InitializeView(view, _presenter);
+            view.Initialize(_presenter);
             OnAwaken();
         }
 
@@ -33,14 +33,6 @@ namespace Shared
 
         [NotNull]
         protected abstract TPresenter CreatePresenter([NotNull] TModel model, [NotNull] TView view);
-
-        /// <summary>
-        /// Should be implemented as View.Initialize(presenter).
-        /// </summary>
-        /// <param name="view">Initialized view.</param>
-        /// <param name="presenter">Presenter passed to the view initialization method.</param>
-        /// <see cref="Shared.UI.View&lt;TPresenter&gt;.Initialize(TPresenter)"/>
-        protected abstract void InitializeView([NotNull] TView view, [NotNull] TPresenter presenter);
 
         protected virtual void OnAwaken() { }
 

@@ -1,5 +1,5 @@
 ﻿using System;
-using Shared.UI;
+using _Shared.UI;
 
 namespace Battle.UI
 {
@@ -12,8 +12,14 @@ namespace Battle.UI
         {
             _playerHealthBarBinding = new HealthBarBinding(View.PlayerHealthBar, model.Player);
             _opponentHealthBarBinding = new HealthBarBinding(View.OpponentHealthBar, model.Opponent);
+            Model.Started += Model_OnStarted;
             Model.PlayerWon += Model_OnPlayerWon;
             Model.PlayerLost += Model_OnPlayerLost;
+        }
+
+        private void Model_OnStarted()
+        {
+            View.Show();
         }
 
         private void Model_OnPlayerWon()
@@ -30,6 +36,7 @@ namespace Battle.UI
         {
             _playerHealthBarBinding.Dispose();
             _opponentHealthBarBinding.Dispose();
+            Model.Started -= Model_OnStarted;
             Model.PlayerWon -= Model_OnPlayerWon;
             Model.PlayerLost -= Model_OnPlayerLost;
         }

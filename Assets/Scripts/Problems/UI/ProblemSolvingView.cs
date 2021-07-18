@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
+using _Shared.UI;
 using DG.Tweening;
-using Shared.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +11,7 @@ namespace Problems.UI
 {
     public class ProblemSolvingView : View<IProblemSolvingPresenter>, IProblemSolvingView
     {
+        [SerializeField] private bool _showOnAwake;
         [SerializeField] private TMP_Text _problemText;
         [SerializeField] [Min(0f)] private float _selectionDuration = 0.5f;
         [SerializeField] [Min(0f)] private float _answerDisplayDuration = 1f;
@@ -46,6 +47,8 @@ namespace Problems.UI
                 var capturedIndex = index;
                 _onClickListeners[index] = () => OnSelected(capturedIndex);
             }
+
+            Toggle(_showOnAwake);
         }
 
         public void OnGenerated()

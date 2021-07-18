@@ -6,6 +6,7 @@ namespace Battle
     {
         public readonly Fighter Player;
         public readonly Fighter Opponent;
+        private bool _started;
 
         public BattleModel(Fighter player, Fighter opponent)
         {
@@ -14,6 +15,15 @@ namespace Battle
             Player.Died += Player_OnDied;
             Opponent.Died += Opponent_OnDied;
         }
+
+        public void Start()
+        {
+            if (_started) return;
+            _started = true;
+            Started?.Invoke();
+        }
+
+        public event Action Started;
 
         private void Player_OnDied()
         {

@@ -1,8 +1,7 @@
 ﻿using DG.Tweening;
-using DG.Tweening.Core;
 using UnityEngine;
 
-namespace Shared.Animations
+namespace _Shared.Animations
 {
     public abstract class AnimationBase<TState> : MonoBehaviour
     {

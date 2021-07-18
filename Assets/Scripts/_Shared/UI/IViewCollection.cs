@@ -1,4 +1,4 @@
-﻿namespace Shared.UI
+﻿namespace _Shared.UI
 {
     public interface IViewCollection
     {

@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace Shared.UI
+namespace _Shared.UI
 {
     public interface IView<in TPresenter>
     {

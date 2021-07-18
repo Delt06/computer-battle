@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Shared.UI
+namespace _Shared.UI
 {
     public abstract class View<TPresenter> : MonoBehaviour, IView<TPresenter>
     {

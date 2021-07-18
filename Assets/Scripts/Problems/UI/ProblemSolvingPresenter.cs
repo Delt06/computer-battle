@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using Shared.UI;
+using _Shared.UI;
 
 namespace Problems.UI
 {

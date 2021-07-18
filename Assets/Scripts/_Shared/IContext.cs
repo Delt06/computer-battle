@@ -1,4 +1,4 @@
-﻿namespace Shared
+﻿namespace _Shared
 {
     public interface IContext<out TModel> where TModel : class
     {
