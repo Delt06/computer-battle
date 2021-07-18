@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _answersNumber: 4
-  _maxDeviationFromRightAnswer: 0.75
+  _maxDeviationFromRightAnswer: 1
   _timeLimit: 5
 --- !u!1 &1813081850673323790
 GameObject:

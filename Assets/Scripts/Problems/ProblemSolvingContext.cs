@@ -10,6 +10,7 @@ namespace Problems
     {
         [SerializeField] [Min(1)] private int _answersNumber = 4;
         [SerializeField] [Range(0f, 1f)] private float _maxDeviationFromRightAnswer = 0.25f;
+        [SerializeField] [Min(2)] private int _maxForcedOffsetValue = 10;
         [SerializeField] [Min(0f)] private float _timeLimit = 1.0f;
 
         private void Update()
@@ -20,7 +21,8 @@ namespace Problems
         protected override ProblemSolvingModel CreateModel()
         {
             var problemFactory = new RandomProblemFactory(new Random());
-            var answerFactory = new RandomAnswerFactory(new Random(), _maxDeviationFromRightAnswer);
+            var answerFactory =
+                new RandomAnswerFactory(new Random(), _maxDeviationFromRightAnswer, _maxForcedOffsetValue);
             return new ProblemSolvingModel(problemFactory, answerFactory, _answersNumber, _timeLimit);
         }
 

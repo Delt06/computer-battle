@@ -6,13 +6,16 @@ namespace Problems
 {
     public class RandomAnswerFactory : IAnswerFactory
     {
-        private readonly float _maxDeviationRatio;
         private readonly Random _random;
+        private readonly float _maxDeviationRatio;
+        private readonly int _maxForcedOffsetValue;
+        private const int MaxIterations = 1000;
 
-        public RandomAnswerFactory(Random random, float maxDeviationRatio)
+        public RandomAnswerFactory(Random random, float maxDeviationRatio, int maxForcedOffsetValue)
         {
             _random = random;
             _maxDeviationRatio = maxDeviationRatio;
+            _maxForcedOffsetValue = maxForcedOffsetValue;
         }
 
         public void Create(in Problem problem, int[] answers)
@@ -27,8 +30,26 @@ namespace Problems
                 if (index == rightAnswerIndex)
                     answers[index] = rightAnswer;
                 else
-                    answers[index] = GenerateWrongAnswer(rightAnswer);
+                    for (var _ = 0; _ < MaxIterations; _++)
+                    {
+                        var answer = GenerateWrongAnswer(rightAnswer);
+                        if (Exists(answers, index, answer)) continue;
+
+                        answers[index] = answer;
+                        break;
+                    }
             }
+        }
+
+        private static bool Exists(int[] answers, int numberOfReadyAnswers, int answer)
+        {
+            for (var index = 0; index < numberOfReadyAnswers; index++)
+            {
+                if (answers[index] == answer)
+                    return true;
+            }
+
+            return false;
         }
 
         private int GenerateWrongAnswer(int rightAnswer)
@@ -39,7 +60,7 @@ namespace Problems
             );
             coefficient = Mathf.Max(0f, coefficient);
             var wrongAnswer = Mathf.RoundToInt(rightAnswer * coefficient);
-            if (wrongAnswer == rightAnswer) wrongAnswer++;
+            if (wrongAnswer == rightAnswer) wrongAnswer += _random.Next(1, _maxForcedOffsetValue);
 
             return wrongAnswer;
         }
