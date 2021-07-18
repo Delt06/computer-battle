@@ -9,21 +9,37 @@ namespace _Shared
         where TModel : class
         where TView : class, IView<TPresenter>
     {
+        private TModel _model;
         private IViewCollection _viewCollection;
         private TPresenter _presenter;
+        private bool _isInitialized;
 
         public void Construct(IViewCollection viewCollection)
         {
             _viewCollection = viewCollection;
         }
 
-        public TModel Model { get; private set; }
+        public TModel Model
+        {
+            get
+            {
+                EnsureInitialized();
+                return _model;
+            }
+        }
 
         protected void Awake()
         {
-            Model = CreateModel();
+            EnsureInitialized();
+        }
+
+        private void EnsureInitialized()
+        {
+            if (_isInitialized) return;
+            _isInitialized = true;
+            _model = CreateModel();
             var view = _viewCollection.Get<TView>();
-            _presenter = CreatePresenter(Model, view);
+            _presenter = CreatePresenter(_model, view);
             view.Initialize(_presenter);
             OnAwaken();
         }

@@ -7,10 +7,10 @@ namespace TapToPlay
 {
     public class TapToPlayContext : ContextBehaviour<TapToPlayModel, TapToPlayView, TapToPlayPresenter>
     {
-        private ProblemSolvingContext _problemSolvingContext;
-        private BattleContext _battleContext;
+        private IContext<ProblemSolvingModel> _problemSolvingContext;
+        private IContext<BattleModel> _battleContext;
 
-        public void Construct(ProblemSolvingContext problemSolvingContext, BattleContext battleContext)
+        public void Construct(IContext<ProblemSolvingModel> problemSolvingContext, IContext<BattleModel> battleContext)
         {
             _problemSolvingContext = problemSolvingContext;
             _battleContext = battleContext;
