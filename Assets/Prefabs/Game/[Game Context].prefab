@@ -90,6 +90,8 @@ MonoBehaviour:
   _maxDeviationFromRightAnswer: 1
   _maxForcedOffsetValue: 10
   _timeLimit: 5
+  _minNumber: 1
+  _maxNumber: 30
 --- !u!1 &1813081850673323790
 GameObject:
   m_ObjectHideFlags: 0
